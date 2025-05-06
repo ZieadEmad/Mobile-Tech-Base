@@ -37,4 +37,3 @@
 - **Separation of concerns**: Each layer has a single responsibility.
 - **Testability**: Business logic is independent and easily testable.
 - **Scalability**: New features can be added with minimal changes
-"""
