@@ -23,7 +23,7 @@ class ConnectionFailure extends Failure {
   final String? message;
 
   const ConnectionFailure(
-    super.exceptionType, {
+    super.exceptionType, String string, {
     this.message = "We've lost Your Connection",
   });
 }
