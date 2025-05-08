@@ -1,4 +1,4 @@
-import 'package:arch/features/authentication/domain/entities/userEntity.dart';
+import 'package:arch/features/authentication/domain/entities/user_entity.dart';
 import 'package:logger/logger.dart';
 
 class UserModel extends UserEntity {
