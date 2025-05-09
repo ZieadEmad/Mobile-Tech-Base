@@ -1,1 +1,0 @@
-enum SignInErrors { needsActivation }

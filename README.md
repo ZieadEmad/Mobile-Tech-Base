@@ -37,3 +37,20 @@
 - **Separation of concerns**: Each layer has a single responsibility.
 - **Testability**: Business logic is independent and easily testable.
 - **Scalability**: New features can be added with minimal changes
+
+///========================================
+commands
+
+[//]: # ( to Generate translation keys)
+==>    flutter pub run easy_localization:generate -S "assets/translations" -O "lib/translations" -o "locale_keys.g.dart"  -f keys
+==>    flutter pub run easy_localization:generate -S "assets/translations" -O "lib/translations"
+ # ( if you want automaticly listen to the changeing in the json translation files )
+    firest install  if not instaled
+==>     npm install -g chokidar-cli
+    then
+==>     chokidar "assets/translations/*.json" -c "flutter pub run easy_localization:generate -S assets/translations -O lib/translations -o locale_keys.g.dart -f keys && flutter pub run easy_localization:generate -S assets/translations -O lib/translations"
+  
+[//]: # (to activate gen assets)
+==>     dart pub global activate flutter_gen
+    then
+        flutter pub run build_runner build    

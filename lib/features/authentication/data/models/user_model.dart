@@ -1,4 +1,4 @@
-import 'package:arch/features/authentication/domain/entities/userEntity.dart';
+import 'package:arch/features/authentication/domain/entities/user_entity.dart';
 import 'package:logger/logger.dart';
 
 class UserModel extends UserEntity {
@@ -17,7 +17,7 @@ class UserModel extends UserEntity {
     userToken: null,
   );
 
-  static UserModel? fromJson(Map<String, dynamic> userData) {
+  static UserModel fromJson(Map<String, dynamic> userData) {
     try {
       return UserModel(
         userId: userData['userId']?.toString() ?? '',
@@ -29,7 +29,7 @@ class UserModel extends UserEntity {
       Logger().d(
         "Failed to parse $UserModel from data: $userData with error: $e and stacktrace: $st",
       );
-      return null;
+      return UserModel.fromJson({});
     }
   }
 }

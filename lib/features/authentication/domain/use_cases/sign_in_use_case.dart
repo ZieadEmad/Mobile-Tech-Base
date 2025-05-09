@@ -1,15 +1,11 @@
-import 'dart:developer';
-
-
-import 'package:arch/core/exceptions/failure.dart';
-import 'package:arch/core/extensions/dartz.dart';
-import 'package:arch/core/use_cases/use_case.dart';
-
+import 'package:arch/core/core/domain/entities/failure.dart';
+import 'package:arch/core/core/domain/use_cases/use_case.dart';
+import 'package:arch/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:injectable/injectable.dart';
 
-import '../repository/auth_repository.dart';
-
+@lazySingleton
 class SignInUseCase extends UseCase<void, SignInParams> {
   final AuthRepository repository;
 
@@ -17,11 +13,7 @@ class SignInUseCase extends UseCase<void, SignInParams> {
 
   @override
   Future<Either<Failure, void>> call(SignInParams params) async {
-    final result = await repository.signIn(params);
-    if (result.isRight()) {
-      final token = result.asRight();
-    }
-    return result;
+    return repository.signIn(params);
   }
 }
 
@@ -37,5 +29,5 @@ class SignInParams extends Equatable {
   });
 
   @override
-  List<Object?> get props => [codeOrEmail, password,userType];
+  List<Object?> get props => [codeOrEmail, password, userType];
 }

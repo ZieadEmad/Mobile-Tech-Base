@@ -1,8 +1,11 @@
-import 'package:arch/core/helpers/build_config.dart';
+import 'package:arch/core/core/data/network/utill/configration.dart';
+import 'package:arch/injection/injection.dart';
 import 'package:arch/main.dart';
 
 
-void main() {
-  BuildConfig.flavor = Flavor.staging;
-  appMain();
+void main()async {
+  // BuildConfig.flavor = Flavor.staging;
+  await configureInjection(AppEnvironment.staging);
+
+ await appMain();
 }
