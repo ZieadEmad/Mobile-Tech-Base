@@ -8,15 +8,15 @@ part 'sign_in_state.dart';
 
 @injectable
 class SignInCubit extends Cubit<SignInState> {
-  SignInCubit(this._signInUseCase) : super(SignInInitial());
-  final SignInUseCase _signInUseCase;
+  SignInCubit(this.signInUseCase) : super(SignInInitial());
+  final SignInUseCase signInUseCase;
   Future<void> signIn(
     String emailOrCode,
-    String password,
+    String password, 
     String userType,
   ) async {
     emit(SignInLoading());
-    final result = await _signInUseCase(
+    final result = await signInUseCase.call(
       SignInParams(
         codeOrEmail: emailOrCode,
         password: password,
