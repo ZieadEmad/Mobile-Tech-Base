@@ -41,9 +41,7 @@ class BaseRepositoryImpl implements BaseRepository {
         var errorCode = ServerErrorCode.serverError; // Default error code
 
         if (e.response != null) {
-          // Extract error code from HTTP status code
           errorCode = _getErrorCode(e.response!.statusCode ?? 500);
-
           try {
             // Parse error message from response data if possible
             final responseData =
