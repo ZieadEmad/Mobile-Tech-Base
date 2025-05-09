@@ -1,4 +1,4 @@
-import 'package:arch/core/core/domain/entities/failure.dart';
+import 'package:arch/core/domain/entities/failure.dart';
 import 'package:arch/features/authentication/domain/use_cases/sign_in_use_case.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,4 +1,4 @@
-import 'package:arch/core/core/presentation/theme/colors.dart';
+import 'package:arch/core/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 part 'text.dart';

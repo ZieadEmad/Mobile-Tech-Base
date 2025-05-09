@@ -56,17 +56,17 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i512.DevConfiguration(),
       registerFor: {_dev},
     );
-    gh.lazySingleton<_i162.AuthRemoteDataSource>(
-        () => _i162.AuthRemoteDataSourceImpl(
-              gh<_i361.Dio>(),
-              gh<InvalidType>(),
-            ));
     gh.lazySingleton<_i512.Configuration>(
       () => _i512.ProdConfiguration(),
       registerFor: {_prod},
     );
+    gh.lazySingleton<_i162.AuthRemoteDataSource>(
+        () => _i162.AuthRemoteDataSourceImpl(
+              gh<_i361.Dio>(),
+              gh<_i512.Configuration>(),
+            ));
     gh.lazySingleton<_i921.AuthRepository>(() => _i203.AuthRepositoryImpl(
-          gh<dynamic>(),
+          gh<_i974.Logger>(),
           remote: gh<_i162.AuthRemoteDataSource>(),
         ));
     gh.lazySingleton<_i1.SignInUseCase>(

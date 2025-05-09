@@ -1,9 +1,9 @@
-import 'package:arch/core/core/data/repositories/base_repository_impl.dart';
+import 'package:arch/core/data/repositories/base_repository_impl.dart';
 import 'package:arch/features/authentication/data/data_sources/auth_remote_data_source.dart';
 import 'package:arch/features/authentication/domain/entities/user_entity.dart';
 import 'package:arch/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
-import 'package:arch/core/core/domain/entities/failure.dart';
+import 'package:arch/core/domain/entities/failure.dart';
 import 'package:arch/features/authentication/domain/use_cases/sign_in_use_case.dart';
 import 'package:injectable/injectable.dart';
 

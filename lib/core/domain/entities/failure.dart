@@ -1,4 +1,4 @@
-import 'package:arch/core/core/domain/entities/enum/server_error_code.dart';
+import 'package:arch/core/domain/entities/enum/server_error_code.dart';
 
 abstract class Failure {}
 

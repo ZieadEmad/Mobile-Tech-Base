@@ -53,4 +53,4 @@ commands
 [//]: # (to activate gen assets)
 ==>     dart pub global activate flutter_gen
     then
-        flutter pub run build_runner build    
+        flutter pub run build_runner build

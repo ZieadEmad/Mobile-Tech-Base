@@ -1,5 +1,5 @@
-import 'package:arch/core/core/domain/entities/failure.dart';
-import 'package:arch/core/core/domain/use_cases/use_case.dart';
+import 'package:arch/core/domain/entities/failure.dart';
+import 'package:arch/core/domain/use_cases/use_case.dart';
 import 'package:arch/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';

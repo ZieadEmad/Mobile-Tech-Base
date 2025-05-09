@@ -1,4 +1,4 @@
-import 'package:arch/core/core/data/network/utill/configration.dart';
+import 'package:arch/core/data/network/utill/configration.dart';
 import 'package:arch/features/authentication/data/models/user_model.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';

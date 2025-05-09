@@ -1,4 +1,4 @@
-import 'package:arch/core/core/data/network/utill/configration.dart';
+import 'package:arch/core/data/network/utill/configration.dart';
 import 'package:arch/injection/injection.dart';
 import 'package:arch/main.dart';
 
