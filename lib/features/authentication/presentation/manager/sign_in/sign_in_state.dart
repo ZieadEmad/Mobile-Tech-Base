@@ -1,6 +1,6 @@
 part of 'sign_in_cubit.dart';
 
-sealed class SignInState extends Equatable{}
+sealed class SignInState extends Equatable {}
 
 final class SignInInitial extends SignInState {
   @override
@@ -13,13 +13,19 @@ final class SignInLoading extends SignInState {
 }
 
 final class SignInSuccess extends SignInState {
+  dynamic data;
+
+  SignInSuccess(this.data);
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [data];
 }
 
 final class SignInFailed extends SignInState {
   final Failure failure;
+
   SignInFailed(this.failure);
+
   @override
   // if we have data we need to pass it
   List<Object> get props => [failure];

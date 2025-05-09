@@ -10,9 +10,10 @@ part 'sign_in_state.dart';
 class SignInCubit extends Cubit<SignInState> {
   SignInCubit(this.signInUseCase) : super(SignInInitial());
   final SignInUseCase signInUseCase;
+
   Future<void> signIn(
     String emailOrCode,
-    String password, 
+    String password,
     String userType,
   ) async {
     emit(SignInLoading());
@@ -27,8 +28,8 @@ class SignInCubit extends Cubit<SignInState> {
       (e) {
         emit(SignInFailed(e));
       },
-      (_) {
-        emit(SignInSuccess());
+      (value) {
+        emit(SignInSuccess(value));
       },
     );
   }

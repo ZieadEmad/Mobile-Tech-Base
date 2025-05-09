@@ -54,3 +54,7 @@ commands
 ==>     dart pub global activate flutter_gen
     then
         flutter pub run build_runner build
+
+
+[//]: # (MASON===)
+[//]: # (mason make feature_brick --output-dir ./lib/features)
