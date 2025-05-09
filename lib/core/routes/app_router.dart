@@ -1,3 +1,4 @@
+import 'package:arch/app.dart';
 import 'package:arch/main.dart';
 import 'package:auto_route/auto_route.dart';
 

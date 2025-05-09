@@ -13,10 +13,7 @@ part of 'app_router.dart';
 /// [MyHomeView]
 class MyHomeViewRoute extends PageRouteInfo<void> {
   const MyHomeViewRoute({List<PageRouteInfo>? children})
-      : super(
-          MyHomeViewRoute.name,
-          initialChildren: children,
-        );
+    : super(MyHomeViewRoute.name, initialChildren: children);
 
   static const String name = 'MyHomeViewRoute';
 
