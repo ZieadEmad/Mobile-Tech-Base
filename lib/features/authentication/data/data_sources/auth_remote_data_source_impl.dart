@@ -1,4 +1,3 @@
-
 import 'package:arch/core/data/models/base_response/response_model.dart';
 import 'package:arch/core/data/network/dio_services.dart';
 import 'package:arch/core/data/network/utill/remote_urls.dart';
