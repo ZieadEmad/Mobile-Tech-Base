@@ -3,7 +3,6 @@ import 'package:arch/core/routes/app_router.dart';
 import 'package:arch/core/translations/locale_keys.g.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 final _appRouter = AppRouter();

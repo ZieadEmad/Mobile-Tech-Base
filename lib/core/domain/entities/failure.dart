@@ -15,4 +15,13 @@ class NetworkFailure implements Failure {
   NetworkFailure({this.connectionTimeOut = false});
 }
 
+// class ConnectionFailure implements Failure {
+//   final String? message;
+//
+//   const ConnectionFailure(
+//       super.exceptionType, String string, {
+//         this.message = "We've lost Your Connection",
+//       });
+// }
+
 class LocalAuthFailure implements Failure {}

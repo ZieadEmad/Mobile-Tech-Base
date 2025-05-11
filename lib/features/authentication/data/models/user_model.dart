@@ -2,7 +2,6 @@ import 'package:arch/features/authentication/domain/entities/user_entity.dart';
 import 'package:logger/logger.dart';
 
 class UserModel extends UserEntity {
-
   const UserModel({
     required super.userId,
     required super.userName,
@@ -21,7 +20,7 @@ class UserModel extends UserEntity {
     try {
       return UserModel(
         userId: userData['userId']?.toString() ?? '',
-        userName:userData['userName']?.toString() ?? '',
+        userName: userData['userName']?.toString() ?? '',
         userEmail: userData['userEmail']?.toString() ?? '',
         userToken: userData['userToken']?.toString() ?? '',
       );
@@ -33,4 +32,3 @@ class UserModel extends UserEntity {
     }
   }
 }
-

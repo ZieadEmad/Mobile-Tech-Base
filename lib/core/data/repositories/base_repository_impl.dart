@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:arch/core/data/models/base_response/response_model.dart';
 import 'package:arch/core/domain/entities/failure.dart';
 import 'package:arch/core/domain/repositories/base_repository.dart';
 import 'package:arch/core/domain/entities/enum/server_error_code.dart';
@@ -7,7 +8,6 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 
-import '../models/base_response/base_response.dart';
 
 class BaseRepositoryImpl implements BaseRepository {
   // Logger for logging errors and messages
@@ -48,10 +48,7 @@ class BaseRepositoryImpl implements BaseRepository {
                 e.response!.data is String
                     ? jsonDecode(e.response!.data)
                     : e.response!.data;
-            final baseResponse = BaseResponse.fromJson(
-              responseData,
-              (_) => null,
-            );
+            final baseResponse = ResponseModel.fromJson(responseData);
             message = baseResponse.error?.message ?? '';
           } catch (e) {
             // Return ServerFailure with available information

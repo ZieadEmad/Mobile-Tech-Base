@@ -40,7 +40,7 @@ dependencies:
   dartz: ^0.10.1
   formz: ^0.8.0
   # ///====================================== new gen
-  retrofit: ^4.4.2
+#  retrofit: ^4.4.2
   injectable: ^2.5.0
   shared_preferences: ^2.5.3
   curl_logger_dio_interceptor: ^1.0.0
@@ -59,7 +59,7 @@ dependencies:
 
 dev_dependencies:
   # ///====================================== new gen
-  retrofit_generator:
+#  retrofit_generator:
   injectable_generator: ^2.6.2
   easy_localization_generator: ^0.3.3
   flutter_gen_runner:

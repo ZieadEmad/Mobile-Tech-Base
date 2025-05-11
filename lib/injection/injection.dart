@@ -1,10 +1,28 @@
+import 'package:arch/core/data/network/dio_services.dart';
+import 'package:arch/features/authentication/auth_di.dart';
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:injectable/injectable.dart';
-import 'package:arch/injection/injection.config.dart' as s;
+import 'package:logger/logger.dart';
 
-final GetIt getIt = GetIt.instance;
+class InjectionContainer {
+  static GetIt locator = GetIt.instance;
+  InjectionContainer._();
+}
 
-@injectableInit
-Future<void> configureInjection(String env) async {
-  await s.GetItInjectableX(getIt).init(environment: env);
+Future<void> setupLocator() async {
+  final sl = InjectionContainer.locator;
+  // Shared
+
+  sl.registerLazySingleton<NetworkService>(() => DioService(sl()));
+
+  // Register services here
+  AuthDI().init();
+
+  // cubits
+
+  //use cases
+
+  //core
+  sl.registerLazySingleton<Dio>(() => Dio());
+  sl.registerLazySingleton<Logger>(() => Logger());
 }

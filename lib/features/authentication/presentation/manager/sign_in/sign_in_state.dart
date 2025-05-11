@@ -27,6 +27,5 @@ final class SignInFailed extends SignInState {
   SignInFailed(this.failure);
 
   @override
-  // if we have data we need to pass it
   List<Object> get props => [failure];
 }

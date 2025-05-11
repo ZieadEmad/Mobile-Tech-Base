@@ -1,13 +1,12 @@
 import 'package:arch/core/data/repositories/base_repository_impl.dart';
 import 'package:arch/features/authentication/data/data_sources/auth_remote_data_source.dart';
+import 'package:arch/features/authentication/data/models/user_model.dart';
 import 'package:arch/features/authentication/domain/entities/user_entity.dart';
 import 'package:arch/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:arch/core/domain/entities/failure.dart';
 import 'package:arch/features/authentication/domain/use_cases/sign_in_use_case.dart';
-import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl extends BaseRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remote;
 
@@ -17,16 +16,14 @@ class AuthRepositoryImpl extends BaseRepositoryImpl implements AuthRepository {
   Future<Either<Failure, UserEntity>> signIn(SignInParams params) {
     return request(() {
       return request(() async {
-        var userResponse = await remote.signIn(
-          email: params.codeOrEmail,
-          password: params.password,
-        );
+        var response = await remote.signIn(params);
+        UserModel user = UserModel.fromJson(response.data);
         return right(
           UserEntity(
-            userId: userResponse.userId,
-            userName: userResponse.userName,
-            userEmail: userResponse.userEmail,
-            userToken: userResponse.userToken,
+            userId: user.userId,
+            userName: user.userName,
+            userEmail: user.userEmail,
+            userToken: user.userToken,
           ),
         );
       });
