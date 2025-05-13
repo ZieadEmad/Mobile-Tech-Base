@@ -23,7 +23,7 @@ class UserModel extends UserEntity {
         userName: userData['userName']?.toString() ?? '',
         userEmail: userData['userEmail']?.toString() ?? '',
         userToken: userData['userToken']?.toString() ?? '',
-      );
+           );
     } catch (e, st) {
       Logger().d(
         "Failed to parse $UserModel from data: $userData with error: $e and stacktrace: $st",

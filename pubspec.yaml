@@ -68,9 +68,12 @@ dev_dependencies:
   auto_route_generator:
   mason: ^0.1.1
 
+
+
+
 #  ///====================================== flutter_gen
 flutter_gen:
-  output: lib/core/presentation/util/images/
+  output: lib/core/generated/images/
   line_length: 80
 
   integrations:
@@ -84,6 +87,16 @@ flutter_gen:
       class_name: AppImages
       package_parameter_enabled: false
       style: dot-delimiter
+
+    output: lib/core/helper/generated/images/
+  fonts:
+    enabled: true
+    outputs:
+      class_name: AppFonts
+
+
+
+
 #==================== flutter_gen
 
 
@@ -96,3 +109,23 @@ flutter:
     - assets/images/logos/
     - assets/images/png/
     - assets/images/svg/
+
+  fonts:
+    # Arabic Font
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/arabic/cairo/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+          weight: 400
+    # English Font
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/english/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
+          weight: 400

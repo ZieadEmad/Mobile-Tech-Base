@@ -13,34 +13,11 @@ class AuthRepositoryImpl extends BaseRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(super._logger, {required this.remote});
 
   @override
-  Future<Either<Failure, UserEntity>> signIn(SignInParams params) {
+  Future<Either<Failure, UserModel>> signIn(SignInParams params) {
     return request(() async {
       var response = await remote.signIn(params);
       UserModel user = UserModel.fromJson(response.data);
-      return right(
-        UserEntity(
-          userId: user.userId,
-          userName: user.userName,
-          userEmail: user.userEmail,
-          userToken: user.userToken,
-        ),
-      );
+      return right(user);
     });
   }
-
-  // @override
-  // Future<Either<Failure, UserModel>> signIn(SignInParams params) async {
-  //   final response = await remoteDataSource.signIn(params);
-  //   return response.fold(
-  //         (failure) => Left(failure),
-  //         (json) {
-  //       try {
-  //         UserModel user = UserModel.fromJson(json) ?? UserModel.empty();
-  //         return Right(user);
-  //       } catch (e) {
-  //         return const Left(ServerFailure(ExceptionType.normal));
-  //       }
-  //     },
-  //   );
-  // }
 }

@@ -1,16 +1,17 @@
 import 'package:arch/app.dart';
 import 'package:arch/core/data/network/utill/build_config.dart';
-import 'package:arch/core/translations/codegen_loader.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+import 'core/helper/translations/codegen_loader.g.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   BuildConfig.flavor = Flavor.production;
   await appMain();
 }
- 
+
 appMain() async {
   await EasyLocalization.ensureInitialized();
   FlutterError.onError = (details) async {
